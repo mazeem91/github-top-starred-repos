@@ -7,7 +7,7 @@
 * Depending on your OS, the appropriate version of Docker Community Edition has to be installed on your machine.  ([Download Docker Community Edition](https://hub.docker.com/search/?type=edition&offering=community))
 
 **Installation steps:** 
-1. Copy .env.example to .env in src dir (and set the DB connection config):
+1. Copy `.env.example` to `.env` in `src` DIR (and set the DB connection config):
 
     ```
     DB_HOST=mysql-db
@@ -28,9 +28,16 @@
     ```
     $ docker-compose up -d
     ```
-4. After the whole stack is up, enter the app container and install PHP dependencies:
+
+
+4. Give permission to `src/storage` DIR:
+
+    ```
+    $ chmod -R 777 src/storage/
+    ```
+5. After the whole stack is up, enter the app container and install PHP dependencies:
     ```
     $ docker exec -it app bash
     $ composer install
     ```
-5. That's it! Navigate to [http://localhost](http://localhost) to access the application.
+6. That's it! Navigate to [http://localhost](http://localhost) to access the application.
